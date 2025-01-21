@@ -1,24 +1,24 @@
+let eyes = [eyeOpen, eyeClosing1, eyeClosing2, eyeClosing1]
+let i = 0
+
 function setup() {
     createCanvas(400, 400);
     background(146, 232, 201);
-    frameRate(3)
-    let eyes = [
-    eyeOpen(200, 150),
-    eyeClosing1(200, 150),
-    eyeClosing2(200, 150),
-    ]
+    frameRate(10)
 }
 
-var i = 0
-
 function draw() { 
-    eyes[i]
-    i ++
+    //background(146, 232, 201);
+    eyes[i](mouseX, mouseY);
+    i++;
+    if (i > 3) {
+        i = 0;
+    }
 }
   
 function eyeOpen(x, y) { // Creates Eye Centered on X, Y coords
-    let leftx = (x-40)
-    let rightx= (x+40)
+    let leftx = (x-50)
+    let rightx= (x+50)
    
     strokeWeight(2)
     stroke("black");
@@ -46,8 +46,8 @@ function eyeOpen(x, y) { // Creates Eye Centered on X, Y coords
 }
 
 function eyeClosing1(x, y) { // Creatd Closing Eye from X, Y coords
-    let leftx = (x-40)
-    let rightx= (x+40)
+    let leftx = (x-50)
+    let rightx= (x+50)
     
     strokeWeight(1) // Eye
     stroke("black");
@@ -92,8 +92,8 @@ function eyeClosing1(x, y) { // Creatd Closing Eye from X, Y coords
 }
 
 function eyeClosing2(x, y) { // Creatd Closing Eye from X, Y coords
-    let leftx = (x-40)
-    let rightx= (x+40)
+    let leftx = (x-50)
+    let rightx= (x+50)
     
     strokeWeight(1) // Eye
     stroke("black");
