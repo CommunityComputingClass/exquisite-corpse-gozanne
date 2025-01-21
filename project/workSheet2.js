@@ -4,24 +4,31 @@ function setup() {
 }
 
 function draw() {  
-  eye(200, 150)  
+  eye(200, 150, 50-0.001)  
 }
 
 function eye(x, y) { // Creates Eye Centered on X, Y coords
-  stroke("blue")
-  fill("white")
-  ellipse((x-40), y, 50, 20)
-  fill("green")
-  circle((x-40), y, 20)
-  fill("black")
-  circle((x-42.5), (y-2.5), 5)
+  let leftx = (x-40)
+  let rightx= (x+40)
 
-  stroke("blue")
-  fill("white")
-  ellipse((x+40), y, 50, 20)
-  fill("green")
-  circle((x+40), y, 20)
-  fill("black")
-  circle((x+37.5), (y-2.5), 5)
+  stroke("black");
+  fill("white");
+  ellipse(leftx, y, 50, 20);
+  fill("blue");
+  circle(leftx, y, 20);
+  fill("black");
+  circle(leftx, y, 10);
+  fill("white");
+  circle((leftx-2.5), (y-2.5), 5);
+
+  stroke("black");
+  fill("white");
+  ellipse(rightx, y, 50, 20);
+  fill("blue");
+  circle(rightx, y, 20);
+  fill("black");
+  circle(rightx, y, 10);
+  fill("white");
+  circle((rightx-2.5), (y-2.5), 5);
 }
   
